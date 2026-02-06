@@ -1,0 +1,151 @@
+:root {
+    --bg-color: #050505;       /* Bardzo ciemne tło */
+    --card-bg: #121212;        /* Tło wizytówki */
+    --text-main: #ffffff;
+    --text-muted: #a1a1a1;
+    --accent: #C41E3A;         /* Głęboka czerwień (jak suknia ze zdjęcia) */
+    --border: #2a2a2a;
+    --font-main: 'Inter', sans-serif;
+    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px; /* Mniejszy padding na mobile */
+}
+
+/* Główna karta */
+.card {
+    width: 100%;
+    max-width: 420px;
+    background-color: var(--card-bg);
+    border-radius: 20px;
+    overflow: hidden; /* Ważne, żeby zdjęcie nie wystawało */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    border: 1px solid var(--border);
+    animation: fadeIn 0.8s ease-out;
+}
+
+/* --- Sekcja ze zdjęciem (NOWE) --- */
+.image-container {
+    width: 100%;
+    height: 220px; /* Wysokość banera */
+    position: relative;
+    background-color: #000;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Zdjęcie wypełni obszar i się nie spłaszczy */
+    object-position: center top; /* Skupienie na górnej części (twarze) */
+    display: block;
+}
+
+/* Delikatny gradient na dole zdjęcia, żeby przejście było płynne */
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: linear-gradient(to top, var(--card-bg), transparent);
+}
+
+/* Wnętrze karty (tekst) */
+.card-content {
+    padding: 2rem 1.5rem;
+}
+
+/* Header */
+.header { text-align: center; margin-bottom: 2rem; }
+
+.brand-name {
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+    color: white;
+}
+
+.brand-name span { color: var(--accent); }
+
+.location {
+    font-size: 0.9rem;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+}
+
+.description {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* Przyciski */
+.actions { display: flex; flex-direction: column; gap: 0.8rem; }
+
+.action-btn {
+    display: flex;
+    align-items: center;
+    background-color: #1E1E1E;
+    border: 1px solid var(--border);
+    padding: 1rem;
+    border-radius: 12px;
+    text-decoration: none;
+    color: var(--text-main);
+    transition: var(--transition);
+}
+
+.action-btn:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+    background-color: #252525;
+}
+
+.icon-box {
+    width: 36px;
+    height: 36px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+
+.icon-box svg { width: 18px; height: 18px; fill: white; }
+
+.text-box { display: flex; flex-direction: column; flex-grow: 1; }
+.label { font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; font-weight: 600; }
+.value { font-size: 0.95rem; font-weight: 500; }
+
+/* Wyróżniony przycisk (Instagram) */
+.action-btn.featured {
+    background: linear-gradient(145deg, #1e1e1e, #161616);
+    border: 1px solid #333;
+}
+.action-btn.featured:hover { border-color: #E1306C; }
+.action-btn.featured:hover .icon-box svg { fill: #E1306C; }
+
+.arrow { font-size: 1.2rem; color: #555; transition: var(--transition); }
+.action-btn:hover .arrow { transform: translateX(4px); color: var(--accent); }
+
+footer { text-align: center; font-size: 0.75rem; color: #444; margin-top: 2rem; }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
