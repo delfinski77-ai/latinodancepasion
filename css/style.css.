@@ -1,0 +1,341 @@
+/* ---------------------------------------------------
+   Ustawienia bazowe
+--------------------------------------------------- */
+:root {
+  --bg: #050816;
+  --bg-elevated: #0b1020;
+  --border: #1f2937;
+  --border-soft: rgba(148, 163, 184, 0.35);
+  --accent: #a855f7;          /* fioletowy akcent */
+  --accent-soft: rgba(168, 85, 247, 0.4);
+  --text-primary: #f9fafb;
+  --text-muted: #9ca3af;
+  --font-sans: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  color-scheme: dark light;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  font-family: var(--font-sans);
+  background:
+    radial-gradient(120% 140% at 10% 0%, #111827 0, #050816 50%, #020617 100%);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------------------------------------------------
+   Layout
+--------------------------------------------------- */
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem 1.5rem;
+}
+
+.card {
+  width: 100%;
+  max-width: 520px;
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.98));
+  border-radius: 1.5rem;
+  border: 1px solid var(--border);
+  box-shadow:
+    0 28px 80px rgba(0, 0, 0, 0.85),
+    0 0 0 1px rgba(15, 23, 42, 0.9);
+  padding: 2rem 1.75rem 1.5rem;
+}
+
+/* ---------------------------------------------------
+   Hero z grafiką
+--------------------------------------------------- */
+
+.hero {
+  margin-bottom: 1.9rem;
+}
+
+.hero__banner {
+  margin: 0 0 1rem;
+  position: relative;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  border: 1px solid var(--border-soft);
+  background: #020617;
+}
+
+.hero__banner img {
+  width: 100%;
+  height: 100%;
+  min-height: 210px;
+  display: block;
+  object-fit: cover;
+  transform: scale(1.03);
+  transition: transform 1.3s ease-out;
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: auto 0 0;
+  padding: clamp(0.9rem, 4vw, 1.2rem);
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.96),
+    rgba(0, 0, 0, 0.55),
+    transparent
+  );
+  color: #f9fafb;
+  text-align: left;
+}
+
+.hero__tagline {
+  margin: 0 0 0.15rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+}
+
+.hero__title {
+  margin: 0;
+  font-size: clamp(1.9rem, 6vw, 2.4rem);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.hero__location {
+  margin: 0.15rem 0 0.55rem;
+  font-size: 0.92rem;
+  color: #e5e7eb;
+}
+
+.hero__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.4rem 0.85rem;
+  border-radius: 999px;
+  background: #f9fafb;
+  color: #111827;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+
+/* Opis poniżej banera */
+.hero__description {
+  margin: 0;
+  text-align: center;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+/* Animacje hover włączone tylko gdy JS doda klasę .js-hover */
+.js-hover .hero__banner:hover img {
+  transform: scale(1.06);
+}
+
+.js-hover .hero__banner:hover .hero__cta {
+  background: var(--accent);
+  color: #050816;
+}
+
+/* ---------------------------------------------------
+   Sekcja kontaktowa
+--------------------------------------------------- */
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  margin-bottom: 1.75rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  width: 100%;
+  text-decoration: none;
+  color: inherit;
+  padding: 0.9rem 1rem;
+  border-radius: 0.9rem;
+  background:
+    radial-gradient(circle at top left, rgba(55, 65, 81, 0.25), transparent 55%),
+    rgba(15, 23, 42, 0.95);
+  border: 1px solid var(--border-soft);
+  transition:
+    border-color 160ms ease-out,
+    box-shadow 160ms ease-out,
+    transform 160ms ease-out,
+    background 160ms ease-out;
+}
+
+.contact-item--instagram {
+  padding-right: 0.9rem;
+}
+
+.contact-icon {
+  width: 26px;
+  height: 26px;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.contact-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.contact-label {
+  margin: 0;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+}
+
+.contact-value {
+  margin: 0;
+  font-size: 0.98rem;
+  font-weight: 500;
+}
+
+/* Bazowy hover */
+a.contact-item:hover,
+a.contact-item:focus-visible {
+  border-color: var(--accent);
+}
+
+/* Rozszerzony hover przy włączonym JS */
+.js-hover a.contact-item:hover {
+  transform: translateY(-1px) scale(1.01);
+  box-shadow:
+    0 0 0 1px var(--accent-soft),
+    0 20px 45px rgba(0, 0, 0, 0.9);
+  background:
+    radial-gradient(circle at top left, rgba(168, 85, 247, 0.24), transparent 55%),
+    rgba(15, 23, 42, 0.98);
+}
+
+/* Instagram button */
+.button-ghost {
+  margin-left: auto;
+  padding: 0.45rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.55);
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--accent);
+  background: rgba(15, 23, 42, 0.9);
+  white-space: nowrap;
+}
+
+.js-hover .contact-item--instagram:hover .button-ghost {
+  background: var(--accent);
+  color: #050816;
+  border-color: transparent;
+}
+
+/* ---------------------------------------------------
+   Stopka
+--------------------------------------------------- */
+
+.footer {
+  border-top: 1px solid rgba(31, 41, 55, 0.8);
+  margin-top: 0.75rem;
+  padding-top: 0.8rem;
+}
+
+.footer__text {
+  margin: 0;
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* ---------------------------------------------------
+   Light mode – gdy system woli jasny motyw
+--------------------------------------------------- */
+@media (prefers-color-scheme: light) {
+  :root {
+    color-scheme: light dark;
+  }
+
+  body {
+    background: radial-gradient(100% 140% at 0% 0%, #eef2ff 0, #f9fafb 50%, #e5e7eb 100%);
+    color: #111827;
+  }
+
+  .card {
+    background: #ffffff;
+    border-color: rgba(148, 163, 184, 0.6);
+    box-shadow:
+      0 22px 50px rgba(15, 23, 42, 0.2),
+      0 0 0 1px rgba(226, 232, 240, 0.9);
+  }
+
+  .contact-item {
+    background: #f9fafb;
+    border-color: rgba(209, 213, 219, 0.9);
+  }
+
+  .button-ghost {
+    background: #f9fafb;
+  }
+
+  .footer {
+    border-color: #e5e7eb;
+  }
+
+  .footer__text,
+  .hero__description,
+  .contact-label {
+    color: #6b7280;
+  }
+}
+
+/* ---------------------------------------------------
+   Większe ekrany
+--------------------------------------------------- */
+@media (min-width: 768px) {
+  .page {
+    padding: 3.5rem 2rem;
+  }
+
+  .card {
+    padding: 2.25rem 2.15rem 1.75rem;
+  }
+
+  .hero__banner img {
+    min-height: 260px;
+  }
+
+  .hero__description {
+    font-size: 1rem;
+  }
+}
+
+/* Focus dla klikalnych elementów */
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
