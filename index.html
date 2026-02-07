@@ -1,183 +1,131 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LatinoDancePasion | Szkoła Tańca</title>
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-    
-    <style>
-        /* TUTAJ JEST TWOJE STYLE.CSS - TERAZ NA PEWNO ZADZIAŁA */
-        :root {
-            --bg-color: #050505;
-            --card-bg: #121212;
-            --text-main: #ffffff;
-            --text-muted: #a1a1a1;
-            --accent: #C41E3A;
-            --border: #2a2a2a;
-            --font-main: 'Inter', sans-serif;
-            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-        }
+  <meta charset="utf-8">
+  <title>LatinoDancePasion – kontakt | Salsa & Bachata Kochcice</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+        content="LatinoDancePasion – szkoła tańca w Kochcicach. Salsa i bachata z prawdziwej pasji do latynoskich rytmów i emocji. Sprawdź kontakt i dołącz do nas.">
+  <meta name="theme-color" content="#050816">
+  <meta name="color-scheme" content="dark light">
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+  <!-- Open Graph / SEO -->
+  <meta property="og:title" content="LatinoDancePasion – szkoła tańca">
+  <meta property="og:description"
+        content="Salsa i bachata w Kochcicach. Tańcz z nami w LatinoDancePasion.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://delfinski77-ai.github.io/latinodancepasion">
+  <link rel="canonical" href="https://delfinski77-ai.github.io/latinodancepasion">
 
-        body {
-            font-family: var(--font-main);
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 15px;
-        }
+  <!-- Google Font: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
+    rel="stylesheet">
 
-        .card {
-            width: 100%;
-            max-width: 420px;
-            background-color: var(--card-bg);
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            border: 1px solid var(--border);
-            animation: fadeIn 0.8s ease-out;
-        }
-
-        .image-container {
-            width: 100%;
-            height: 220px;
-            position: relative;
-            background-color: #000;
-            overflow: hidden;
-        }
-
-        .image-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center top;
-            display: block;
-        }
-
-        .overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 60px;
-            background: linear-gradient(to top, var(--card-bg), transparent);
-        }
-
-        .card-content { padding: 2rem 1.5rem; }
-
-        .header { text-align: center; margin-bottom: 2rem; }
-        .brand-name { font-size: 2rem; font-weight: 800; line-height: 1.1; margin-bottom: 0.5rem; color: white; }
-        .brand-name span { color: var(--accent); }
-        .location { font-size: 0.9rem; color: var(--accent); text-transform: uppercase; letter-spacing: 2px; font-weight: 600; margin-bottom: 0.8rem; }
-        .description { color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; }
-
-        .actions { display: flex; flex-direction: column; gap: 0.8rem; }
-        
-        .action-btn {
-            display: flex;
-            align-items: center;
-            background-color: #1E1E1E;
-            border: 1px solid var(--border);
-            padding: 1rem;
-            border-radius: 12px;
-            text-decoration: none;
-            color: var(--text-main);
-            transition: var(--transition);
-        }
-
-        .action-btn:hover { border-color: var(--accent); transform: translateY(-2px); background-color: #252525; }
-
-        .icon-box {
-            width: 36px; height: 36px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 50%;
-            display: flex; justify-content: center; align-items: center;
-            margin-right: 15px; flex-shrink: 0;
-        }
-        .icon-box svg { width: 18px; height: 18px; fill: white; }
-
-        .text-box { display: flex; flex-direction: column; flex-grow: 1; }
-        .label { font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; font-weight: 600; }
-        .value { font-size: 0.95rem; font-weight: 500; }
-
-        .action-btn.featured { background: linear-gradient(145deg, #1e1e1e, #161616); border: 1px solid #333; }
-        .action-btn.featured:hover { border-color: #E1306C; }
-        .action-btn.featured:hover .icon-box svg { fill: #E1306C; }
-
-        .arrow { font-size: 1.2rem; color: #555; transition: var(--transition); }
-        .action-btn:hover .arrow { transform: translateX(4px); color: var(--accent); }
-
-        footer { text-align: center; font-size: 0.75rem; color: #444; margin-top: 2rem; }
-
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-    </style>
+  <!-- Główny styl -->
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
+  <div class="page">
     <main class="card">
-        <!-- ZDJĘCIE -->
-        <div class="image-container">
-            <!-- WAŻNE: Sprawdź czy plik w folderze images nazywa się DOKŁADNIE header.jpg (małe litery) -->
-            <img src="images/header.jpg" alt="Para tańcząca bachatę" loading="lazy">
-            <div class="overlay"></div>
+      <header class="hero" aria-label="LatinoDancePasion – szkoła tańca">
+        <figure class="hero__banner">
+          <!-- UPEWNIJ SIĘ, ŻE TEN PLIK ISTNIEJE:
+               images/hero-latinodancepasion.jpg -->
+          <img
+            src="images/hero-latinodancepasion.jpg"
+            alt="Para tańcząca latynoską salsę w czerwonej sukience – LatinoDancePasion."
+            loading="lazy">
+          <figcaption class="hero__overlay">
+            <p class="hero__tagline">Szkoła tańca – Bachata i Salsa</p>
+            <h1 class="hero__title">LatinoDancePasion</h1>
+            <p class="hero__location">Lubliniec / Kochcice</p>
+            <span class="hero__cta">Dołącz do nas już dziś</span>
+          </figcaption>
+        </figure>
+
+        <p class="hero__description">
+          Uczymy się salsy i bachaty z prawdziwej pasji do latynoskich rytmów i emocji.
+          Spotykamy się w kameralnej przestrzeni w Kochcicach.
+        </p>
+      </header>
+
+      <section class="contact" aria-label="Dane kontaktowe">
+        <!-- Telefon -->
+        <a class="contact-item" href="tel:+48889906765">
+          <img src="images/icons/phone.svg"
+               class="contact-icon"
+               alt=""
+               aria-hidden="true">
+          <div class="contact-text">
+            <h2 class="contact-label">Telefon</h2>
+            <p class="contact-value">889 906 765</p>
+          </div>
+        </a>
+
+        <!-- Adres -->
+        <div class="contact-item" aria-label="Adres szkoły tańca">
+          <img src="images/icons/location.svg"
+               class="contact-icon"
+               alt=""
+               aria-hidden="true">
+          <div class="contact-text">
+            <h2 class="contact-label">Adres</h2>
+            <p class="contact-value">ul. Ogrodowa 5, Kochcice</p>
+          </div>
         </div>
 
-        <div class="card-content">
-            <header class="header">
-                <h1 class="brand-name">LatinoDance<span>Pasion</span></h1>
-                <h2 class="location">Lubliniec / Kochcice</h2>
-                <p class="description">
-                    Szkoła tańca – Bachata i Salsa.<br>
-                    Prawdziwa pasja do latynoskich rytmów.
-                </p>
-            </header>
+        <!-- Instagram -->
+        <a class="contact-item contact-item--instagram"
+           href="https://instagram.com/latinodancepasion"
+           target="_blank"
+           rel="noopener">
+          <img src="images/icons/instagram.svg"
+               class="contact-icon"
+               alt=""
+               aria-hidden="true">
 
-            <div class="actions">
-                <!-- Telefon -->
-                <a href="tel:+48889906765" class="action-btn">
-                    <div class="icon-box">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-                    </div>
-                    <div class="text-box">
-                        <span class="label">Zadzwoń do nas</span>
-                        <span class="value">889 906 765</span>
-                    </div>
-                </a>
+          <div class="contact-text">
+            <h2 class="contact-label">Instagram</h2>
+            <p class="contact-value">@latinodancepasion</p>
+          </div>
 
-                <!-- Lokalizacja -->
-                <a href="https://www.google.com/maps/search/?api=1&query=ul.+Ogrodowa+5,+Kochcice" target="_blank" class="action-btn">
-                    <div class="icon-box">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-                    </div>
-                    <div class="text-box">
-                        <span class="label">Lokalizacja</span>
-                        <span class="value">ul. Ogrodowa 5, Kochcice</span>
-                    </div>
-                </a>
+          <span class="button-ghost">Odwiedź Instagram</span>
+        </a>
+      </section>
 
-                <!-- Instagram -->
-                <a href="https://instagram.com/latinodancepasion" target="_blank" class="action-btn featured">
-                    <div class="icon-box">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 1 1-5 5 5 5 0 0 1 5-5m0 2a3 3 0 1 0 3 3 3 3 0 0 0-3-3z"/></svg>
-                    </div>
-                    <div class="text-box">
-                        <span class="label">Zobacz zdjęcia</span>
-                        <span class="value">Instagram</span>
-                    </div>
-                    <div class="arrow">→</div>
-                </a>
-            </div>
-
-            <footer><p>&copy; 2024 LatinoDancePasion.</p></footer>
-        </div>
+      <footer class="footer">
+        <p class="footer__text">© 2024 LatinoDancePasion. Wszelkie prawa zastrzeżone.</p>
+      </footer>
     </main>
+  </div>
+
+  <!-- Minimalny JS – tylko do subtelnych animacji hover -->
+  <script>
+    document.documentElement.classList.add('js-hover');
+  </script>
+
+  <!-- Struktura danych (SEO) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "LatinoDancePasion",
+    "description": "Szkoła tańca – bachata i salsa w Kochcicach.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "ul. Ogrodowa 5",
+      "addressLocality": "Kochcice",
+      "addressCountry": "PL"
+    },
+    "telephone": "+48 889 906 765",
+    "url": "https://delfinski77-ai.github.io/latinodancepasion",
+    "sameAs": [
+      "https://instagram.com/latinodancepasion"
+    ]
+  }
+  </script>
 </body>
 </html>
