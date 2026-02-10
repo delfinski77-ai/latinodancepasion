@@ -57,7 +57,7 @@ body {
   box-shadow:
     0 28px 80px rgba(0, 0, 0, 0.85),
     0 0 0 1px rgba(15, 23, 42, 0.9);
-  padding:  0 1.75rem 1.75rem;
+  padding: 0 1.75rem 1.75rem;
 }
 
 /* ---------------------------------------------------
@@ -77,47 +77,39 @@ body {
   background: #020617;
 }
 
-/* Samo zdjęcie */
+/* zdjęcie */
 .hero__banner img {
   width: 100%;
   display: block;
   object-fit: cover;
-  min-height: 210px;
-  transition: transform 1.3s ease-out;
+  min-height: 220px;
+  transition: transform 1.2s ease-out;
 }
 
-/* Opis nałożony na dół zdjęcia */
+/* opis nałożony na dół zdjęcia */
 .hero__description {
   position: absolute;
-  inset: auto 0 0;  /* dół, pełna szerokość */
-  padding: 0.9rem 1.1rem 1.2rem;
+  left: 0;
+  right: 0;
+  bottom: 0;                     /* trzyma się dołu */
+  padding: 0.9rem 1.2rem 1.1rem;
   margin: 0;
   font-size: 0.95rem;
   line-height: 1.5;
   color: #f9fafb;
   text-align: left;
+  max-width: 80%;                /* żeby tekst nie szedł przez całą szerokość */
   background: linear-gradient(
     to top,
-    rgba(0, 0, 0, 0.9),
-    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.92),
+    rgba(0, 0, 0, 0.6),
     transparent
   );
 }
 
-/* Opcjonalny lekki zoom przy hover */
+/* delikatny zoom przy hover */
 .js-hover .hero__banner:hover img {
   transform: scale(1.03);
-}
-}
-
-/* Animacje hover włączone tylko gdy JS doda klasę .js-hover */
-.js-hover .hero__banner:hover img {
-  transform: scale(1.06);
-}
-
-.js-hover .hero__banner:hover .hero__cta {
-  background: var(--accent);
-  color: #050816;
 }
 
 /* ---------------------------------------------------
@@ -156,8 +148,8 @@ body {
 }
 
 .contact-icon {
-  width: 26px;
-  height: 26px;
+  width: 22px;
+  height: 22px;
   color: var(--accent);
   flex-shrink: 0;
 }
@@ -179,8 +171,8 @@ body {
 .contact-value {
   margin: 0;
   font-size: 0.98rem;
-  white-space: nowrap;
   font-weight: 500;
+  white-space: nowrap;
 }
 
 /* Bazowy hover */
@@ -273,7 +265,6 @@ a.contact-item:focus-visible {
   }
 
   .footer__text,
-  .hero__description,
   .contact-label {
     color: #6b7280;
   }
@@ -297,6 +288,7 @@ a.contact-item:focus-visible {
 
   .hero__description {
     font-size: 1rem;
+    max-width: 70%;
   }
 }
 
@@ -305,12 +297,3 @@ a:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
 }
-
-
-
-
-
-
-
-
-
