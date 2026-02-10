@@ -70,34 +70,38 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 }
 
 .hero__banner {
   margin: 0;
   width: 100%;
-  position: relative;
   border-radius: 1.25rem;
   overflow: hidden;
   border: 1px solid var(--border-soft);
   background: #020617;
+  display: flex;
+  justify-content: center;
 }
 
-/* NAPRAWA ZDJĘCIA - 100% szerokości, auto wysokość, zero ucinania */
+/* ROZWIĄZANIE PROBLEMU UCIĘTEGO ZDJĘCIA */
 .hero__banner img {
   width: 100%;
-  height: auto; 
+  height: auto !important; /* Wymusza naturalne proporcje zdjęcia */
+  min-height: 0 !important; /* Blokuje sztuczne rozciąganie */
+  max-height: none !important;
   display: block;
-  object-fit: contain; 
+  object-fit: contain; /* Zdjęcie dopasuje się w całości bez obcinania */
   transition: transform 1.2s ease-out;
 }
 
-/* NAPRAWA NAPISU POD ZDJĘCIEM - elegancka ramka zamiast balonu */
+/* Napis pod zdjęciem */
 .hero-line {
   position: relative;
   width: 92%;
-  margin: -1.2rem auto 0; /* Nakłada ramkę na zdjęcie */
+  margin: -1.2rem auto 0; 
   padding: 0.75rem 1rem;
-  border-radius: 0.8rem; /* Łagodniejszy, profesjonalny prostokąt */
+  border-radius: 0.8rem; 
   background: linear-gradient(90deg, rgba(15, 23, 42, 0.98), rgba(55, 48, 163, 0.98));
   color: #f9fafb;
   font-size: 0.65rem; 
@@ -107,7 +111,7 @@ body {
   text-align: center;
   border: 1px solid rgba(148, 163, 184, 0.55);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.75);
-  z-index: 2; /* Upewnia się, że napis jest nad zdjęciem */
+  z-index: 2; 
 }
 
 .hero-line span {
@@ -130,17 +134,17 @@ body {
   gap: 0.8rem;
   margin-top: 1rem;
   margin-bottom: 1.5rem;
+  width: 100%;
 }
 
 .contact-item {
   display: flex;
   align-items: center;
-  flex-wrap: wrap; /* Pozwala na zrzucenie przycisku w dół */
-  gap: 0.8rem;
+  gap: 1rem; /* Bezpieczny odstęp */
   width: 100%;
   text-decoration: none;
   color: inherit;
-  padding: 0.85rem 1rem;
+  padding: 1rem 1.2rem;
   border-radius: 0.9rem;
   background:
     radial-gradient(circle at top left, rgba(55, 65, 81, 0.25), transparent 55%),
@@ -150,18 +154,18 @@ body {
 }
 
 .contact-icon {
-  width: 22px;
-  height: 22px;
+  width: 24px;
+  height: 24px;
   color: var(--accent);
   flex-shrink: 0;
 }
 
-/* NAPRAWA CHOINKI W TEKŚCIE */
 .contact-text {
   display: flex;
   flex-direction: column;
-  gap: 0.2rem;
-  flex: 1 1 150px; /* Najważniejsze: nie pozwala zgnieść tekstu poniżej 150px */
+  gap: 0.3rem;
+  flex: 1; /* Zajmuje całą dostępną przestrzeń */
+  min-width: 0; /* Zapobiega ucinaniu tekstu */
 }
 
 .contact-label {
@@ -175,8 +179,9 @@ body {
 .contact-value {
   margin: 0;
   font-size: 0.95rem;
-  font-weight: 500;
-  white-space: normal; 
+  font-weight: 600;
+  line-height: 1.3;
+  word-break: break-word; /* Wymusza zawijanie za długich słów */
 }
 
 /* Bazowy hover */
@@ -199,7 +204,7 @@ a.contact-item:focus-visible {
 /* Instagram button */
 .button-ghost {
   margin-left: auto;
-  padding: 0.5rem 0.8rem;
+  padding: 0.6rem 1rem;
   border-radius: 999px;
   border: 1px solid rgba(148, 163, 184, 0.55);
   font-size: 0.7rem;
@@ -210,6 +215,7 @@ a.contact-item:focus-visible {
   background: rgba(15, 23, 42, 0.9);
   white-space: nowrap;
   text-align: center;
+  flex-shrink: 0; /* Zapobiega zgniataniu przycisku */
 }
 
 .js-hover .contact-item--instagram:hover .button-ghost {
@@ -277,16 +283,38 @@ a.contact-item:focus-visible {
 }
 
 /* ---------------------------------------------------
-   MEDIA QUERIES - NAPRAWA DLA SMARTFONÓW
+   MEDIA QUERIES - ROZWIĄZANIE NA TELEFONY
 --------------------------------------------------- */
 
 /* Telefony (iPhone, Android) */
-@media (max-width: 500px) {
-  /* Przycisk Instagrama na małym ekranie spada pod tekst i robi się na 100% szerokości */
+@media (max-width: 480px) {
+  
+  /* Na małych ekranach ustawiamy elementy w PIONIE */
+  .contact-item {
+    flex-direction: column; /* Ikona, potem tekst, potem przycisk pod spodem */
+    align-items: center;
+    text-align: center;
+    padding: 1.2rem 1rem;
+  }
+  
+  .contact-text {
+    align-items: center;
+    width: 100%;
+  }
+
+  .contact-label {
+    font-size: 0.7rem;
+  }
+
+  .contact-value {
+    font-size: 1rem;
+  }
+
+  /* Przycisk Instagrama grzecznie ląduje na samym dole na 100% szerokości */
   .button-ghost {
     width: 100%;
     margin-left: 0;
-    margin-top: 0.4rem;
+    margin-top: 0.5rem;
   }
   
   .hero-line {
@@ -318,7 +346,7 @@ a.contact-item:focus-visible {
   }
 
   .contact-value {
-    font-size: 0.98rem;
+    font-size: 1.05rem;
   }
 }
 
