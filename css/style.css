@@ -88,17 +88,7 @@ body {
 }
 
 .hero__overlay {
-  position: absolute;
-  inset: auto 0 0;
-  padding: clamp(0.9rem, 4vw, 1.2rem);
-  background: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 0.96),
-    rgba(0, 0, 0, 0.55),
-    transparent
-  );
-  color: #f9fafb;
-  text-align: left;
+  display: none;  /* ukryj całkowicie nakładkę z tekstem */
 }
 
 .hero__tagline {
@@ -340,6 +330,7 @@ a:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
 }
+
 
 
 
