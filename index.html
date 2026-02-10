@@ -27,19 +27,11 @@
   <!-- Główny styl -->
   <link rel="stylesheet" href="css/style.css">
 </head>
-HTML jest prawie idealny – działa poprawnie i dobrze współpracuje z CSS, który podałem.  
-Jeśli chcesz, żeby na zdjęciu był TYLKO ten jeden, krótki tekst, musimy jedynie:
-
-1. skrócić treść w `<figcaption>` (usunąć drugie zdanie),
-2. ewentualnie lekko uporządkować wcięcia.
-
-Poniżej masz „docelowy” fragment `index.html` (reszta pliku jest OK – nie zmieniaj):
-
-```html
 <body>
   <div class="page">
     <main class="card">
 
+      <!-- Baner ze zdjęciem + napis na dole -->
       <header class="hero" aria-label="LatinoDancePasion – szkoła tańca">
         <figure class="hero__banner">
           <img
@@ -47,13 +39,14 @@ Poniżej masz „docelowy” fragment `index.html` (reszta pliku jest OK – nie
             alt="Para tańcząca latynoską salsę w czerwonej sukience – LatinoDancePasion."
             loading="lazy">
 
-          <!-- Napis nałożony na zdjęcie -->
+          <!-- Opis nałożony na dół zdjęcia -->
           <figcaption class="hero__description">
             Uczymy się salsy i bachaty z prawdziwej pasji do latynoskich rytmów i emocji.
           </figcaption>
         </figure>
       </header>
 
+      <!-- Sekcja kontaktowa -->
       <section class="contact" aria-label="Dane kontaktowe">
         <!-- Telefon -->
         <a class="contact-item" href="tel:+48889906765">
@@ -99,25 +92,11 @@ Poniżej masz „docelowy” fragment `index.html` (reszta pliku jest OK – nie
       </section>
 
       <footer class="footer">
-        <p class="footer__text">© 2026 LatinoDancePasion. Wszelkie prawa zastrzeżone.</p>
+        <p class="footer__text">© 2024 LatinoDancePasion. Wszelkie prawa zastrzeżone.</p>
       </footer>
-
     </main>
   </div>
-  ...
-</body>
-```
 
-Różnica względem Twojej wersji: w `figcaption` zostawiłem TYLKO to jedno zdanie, dokładnie tak jak chciałeś:
-
-> Uczymy się salsy i bachaty z prawdziwej pasji do latynoskich rytmów i emocji.
-
-Po zapisaniu (`Commit changes`) i odświeżeniu strony **Ctrl+F5** powinieneś mieć:
-
-- na zdjęciu: oryginalny tekst z grafiki + ten jeden, czytelny napis w dymku,  
-- pod zdjęciem: od razu sekcję kontaktową (telefon, adres, Instagram).
-
-Jeśli chcesz jeszcze lekko przesunąć ten dymek (np. bardziej w lewo/prawo albo niżej), mogę podać Ci 2–3 konkretne liczby w `hero__description` w CSS do zmiany.
   <!-- Minimalny JS – tylko do subtelnych animacji hover -->
   <script>
     document.documentElement.classList.add('js-hover');
@@ -145,10 +124,3 @@ Jeśli chcesz jeszcze lekko przesunąć ten dymek (np. bardziej w lewo/prawo alb
   </script>
 </body>
 </html>
-
-
-
-
-
-
-
