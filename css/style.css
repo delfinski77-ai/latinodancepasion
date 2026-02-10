@@ -86,15 +86,14 @@ body {
   transition: transform 1.2s ease-out;
 }
 
-/* Pasek z hasłem POD zdjęciem */
+/* Pasek z hasłem POD zdjęciem - POPRAWIONY */
 .hero-line {
   position: relative;
   max-width: 92%;
-  margin: -0.9rem auto 0;          /* podsuwa pasek do dolnej krawędzi zdjęcia */
-  padding: 0.55rem 1.1rem;
-  border-radius: 999px;
-  background:
-    linear-gradient(90deg, rgba(15, 23, 42, 0.98), rgba(55, 48, 163, 0.98));
+  margin: -0.9rem auto 0;
+  padding: 0.75rem 1.2rem;
+  border-radius: 1.2rem; /* Zmienione na prostokąt z zaokrąglonymi rogami, lepsze dla 2 linijek */
+  background: linear-gradient(90deg, rgba(15, 23, 42, 0.98), rgba(55, 48, 163, 0.98));
   color: #f9fafb;
   font-size: 0.68rem;
   letter-spacing: 0.14em;
@@ -102,9 +101,11 @@ body {
   text-align: center;
   border: 1px solid rgba(148, 163, 184, 0.55);
   box-shadow: 0 14px 30px rgba(0, 0, 0, 0.85);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  
+  /* Zmiany pozwalające na wyświetlanie całego tekstu */
+  white-space: normal;
+  line-height: 1.5;
+  text-wrap: balance; /* Zapobiega pojedynczym słowom w nowej linijce */
 }
 
 /* wyróżnienie "salsy i bachaty" */
