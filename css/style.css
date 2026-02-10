@@ -323,7 +323,7 @@ a.contact-item:focus-visible {
   }
 
   .card {
-    padding: 2.25rem 2.15rem 1.75rem;
+    padding: 0 2.15rem 2rem;
   }
 
   .hero__banner img {
@@ -340,6 +340,7 @@ a:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
 }
+
 
 
 
