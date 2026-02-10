@@ -77,53 +77,13 @@ body {
   background: #020617;
 }
 
+/* Samo zdjęcie */
 .hero__banner img {
   width: 100%;
-  height: 100%;
-  min-height: 210px;
   display: block;
   object-fit: cover;
-  transform: scale(1.03);
+  min-height: 210px;
   transition: transform 1.3s ease-out;
-}
-
-.hero__overlay {
-  display: none;  /* ukryj całkowicie nakładkę z tekstem */
-}
-
-.hero__tagline {
-  margin: 0 0 0.15rem;
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--accent);
-}
-
-.hero__title {
-  margin: 0;
-  font-size: clamp(1.9rem, 6vw, 2.4rem);
-  font-weight: 700;
-  letter-spacing: 0.04em;
-}
-
-.hero__location {
-  margin: 0.15rem 0 0.55rem;
-  font-size: 0.92rem;
-  color: #e5e7eb;
-}
-
-.hero__cta {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.4rem 0.85rem;
-  border-radius: 999px;
-  background: #f9fafb;
-  color: #111827;
-  font-size: 0.78rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
 }
 
 /* Opis nałożony na dół zdjęcia */
@@ -142,6 +102,12 @@ body {
     rgba(0, 0, 0, 0.5),
     transparent
   );
+}
+
+/* Opcjonalny lekki zoom przy hover */
+.js-hover .hero__banner:hover img {
+  transform: scale(1.03);
+}
 }
 
 /* Animacje hover włączone tylko gdy JS doda klasę .js-hover */
@@ -339,6 +305,7 @@ a:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
 }
+
 
 
 
