@@ -10,11 +10,7 @@ body {
   padding: 2rem 1rem;
 }
 
-.page {
-  max-width: 650px;
-  margin: 0 auto;
-}
-
+/* WSPÓLNY DLA WSZYSTKICH ROZMIARÓW EKRANU */
 .card {
   display: flex;
   flex-direction: column;
@@ -32,32 +28,6 @@ body {
   width: 100%;
   height: auto;
   display: block;
-}
-
-/* Napis na zdjęciu */
-.hero-brand {
-  position: absolute;
-  top: 32%;
-  right: 16px;
-  text-align: right;
-  line-height: 0.9;
-  color: white;
-  font-weight: 900;
-  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.9);
-  z-index: 5;
-}
-
-.hero-brand__line1 {
-  font-size: clamp(2.1rem, 9vw, 3.7rem);
-  display: block;
-}
-
-.hero-brand__line2 {
-  font-size: clamp(1.1rem, 4vw, 1.6rem);
-  font-weight: 600;
-  display: block;
-  margin-top: 0.5rem;
-  opacity: 0.95;
 }
 
 .hero-line {
@@ -153,4 +123,84 @@ body {
   padding-top: 2rem;
   color: #94a3b8;
   font-size: 0.85rem;
+}
+
+/* 📱 WERSJA NA TELEFON - PONIŻEJ 768PX */
+@media (max-width: 767px) {
+  .page {
+    max-width: 100%;
+  }
+
+  .hero-brand {
+    position: absolute;
+    top: 32%;
+    right: 16px;
+    text-align: right;
+    line-height: 0.9;
+    color: white;
+    font-weight: 900;
+    text-shadow: 0 3px 12px rgba(0, 0, 0, 0.9);
+    z-index: 5;
+  }
+  
+  .hero-brand__line1 {
+    font-size: clamp(2.1rem, 9vw, 3.7rem);
+    display: block;
+  }
+  
+  .hero-brand__line2 {
+    font-size: clamp(1.1rem, 4vw, 1.6rem);
+    font-weight: 600;
+    display: block;
+    margin-top: 0.5rem;
+    opacity: 0.95;
+  }
+
+  .sticky-naglowek {
+    display: none;
+  }
+}
+
+/* 💻 WERSJA NA KOMPUTER - POWYŻEJ 768PX */
+@media (min-width: 768px) {
+  .page {
+    max-width: 650px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+  }
+
+  .hero-brand {
+    display: none;
+  }
+
+  .sticky-naglowek {
+    display: block;
+    position: fixed;
+    top: 50%;
+    right: 4%;
+    transform: translateY(-50%);
+    text-align: right;
+    line-height: 0.85;
+    pointer-events: none;
+    z-index: 1;
+  }
+  
+  .sticky-naglowek .linia1 {
+    font-size: 5rem;
+    font-weight: 900;
+    background: linear-gradient(45deg, #6366f1, #ec4899);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    opacity: 0.9;
+    font-style: italic;
+  }
+  
+  .sticky-naglowek .linia2 {
+    font-size: 2rem;
+    font-weight: 300;
+    color: #475569;
+    margin-top: 0.75rem;
+  }
 }
