@@ -357,36 +357,4 @@ a:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
 }
-//* Tylko dla ekranów większych niż telefon */
-@media (min-width: 1024px) {
-  .sticky-naglowek {
-    position: fixed;
-    top: 50%;
-    right: 3%;
-    transform: translateY(-50%);
-    text-align: right;
-    line-height: 0.85;
-    pointer-events: none;
-    z-index: 10;
-  }
 
-  .sticky-naglowek .linia1 {
-    display: block;
-    font-size: clamp(3.5rem, 8vw, 6rem);
-    font-weight: 900;
-    background: linear-gradient(45deg, #6366f1, #ec4899);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    opacity: 0.9;
-    font-style: italic;
-  }
-
-  .sticky-naglowek .linia2 {
-    display: block;
-    font-size: clamp(1.5rem, 3vw, 2.2rem);
-    font-weight: 300;
-    color: #475569;
-    margin-top: 0.75rem;
-  }
-}
