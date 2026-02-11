@@ -34,6 +34,32 @@ body {
   display: block;
 }
 
+/* Napis na zdjęciu */
+.hero-brand {
+  position: absolute;
+  top: 32%;
+  right: 16px;
+  text-align: right;
+  line-height: 0.9;
+  color: white;
+  font-weight: 900;
+  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.9);
+  z-index: 5;
+}
+
+.hero-brand__line1 {
+  font-size: clamp(2.1rem, 9vw, 3.7rem);
+  display: block;
+}
+
+.hero-brand__line2 {
+  font-size: clamp(1.1rem, 4vw, 1.6rem);
+  font-weight: 600;
+  display: block;
+  margin-top: 0.5rem;
+  opacity: 0.95;
+}
+
 .hero-line {
   background: linear-gradient(135deg, #4f46e5, #ec4899);
   color: white;
