@@ -31,12 +31,10 @@ body {
   transition: transform 0.6s cubic-bezier(0.33, 1, 0.68, 1);
 }
 
-/* Efekt powiększenia zdjęcia po najechaniu */
 .hero:hover img {
   transform: scale(1.02);
 }
 
-/* Ciemny gradient na dole zdjęcia */
 .hero::after {
   content: '';
   position: absolute;
@@ -64,7 +62,7 @@ body {
   max-width: calc(100% - 1.5rem);
   z-index: 10;
   position: relative;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255,255,255,0.05) inset;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
   font-size: clamp(0.9rem, 4vw, 1rem);
   line-height: 1.6;
   font-weight: 400;
@@ -73,7 +71,7 @@ body {
 
 .hero-line:hover {
   transform: translateY(-3px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6), 0 0 20px rgba(255, 89, 137, 0.15), 0 0 0 1px rgba(255,255,255,0.08) inset;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
 }
 
 .hero-line span {
@@ -94,7 +92,7 @@ body {
   box-shadow: 0 2px 10px rgba(0,0,0,0.05);
   display: grid;
   grid-template-columns: 48px 1fr auto;
-  align-items: center; /* ✅ TO BYŁ GŁÓWNY BŁĄD KTÓRY TRWAŁ CAŁY TYDZIEŃ */
+  align-items: center;
   gap: 1rem;
   text-decoration: none;
   transition: transform 0.2s, box-shadow 0.2s;
@@ -115,7 +113,7 @@ body {
 
 .contact-text {
   text-align: left;
-  min-width: 0; /* ✅ Naprawia nakładanie się tekstu na przycisk */
+  min-width: 0;
 }
 
 .contact-label {
@@ -158,18 +156,17 @@ body {
   font-size: 0.85rem;
 }
 
-/* 📱 WERSJA NA TELEFON - PONIŻEJ 768PX */
+/* 📱 TELEFON */
 @media (max-width: 767px) {
   .page {
     max-width: 100%;
   }
-
   .sticky-naglowek {
     display: none;
   }
 }
 
-/* 💻 WERSJA NA KOMPUTER - POWYŻEJ 768PX */
+/* 💻 KOMPUTER */
 @media (min-width: 768px) {
   .page {
     max-width: 650px;
@@ -177,11 +174,9 @@ body {
     position: relative;
     z-index: 10;
   }
-
   .hero-line {
     margin-top: -40px;
   }
-
   .sticky-naglowek {
     display: block;
     position: fixed;
@@ -193,7 +188,6 @@ body {
     pointer-events: none;
     z-index: 1;
   }
-  
   .sticky-naglowek .linia1 {
     font-size: 5rem;
     font-weight: 900;
@@ -204,7 +198,6 @@ body {
     opacity: 0.9;
     font-style: italic;
   }
-  
   .sticky-naglowek .linia2 {
     font-size: 2rem;
     font-weight: 300;
