@@ -1,4 +1,3 @@
-/* GŁÓWNA REGUŁA KTÓRA NAPRAWIŁA WSZYSTKIE BŁĘDY NA ZAWSZE */
 * {
   margin: 0;
   padding: 0;
@@ -118,11 +117,12 @@ body {
   flex-shrink: 0;
 }
 
-/* TEKST JEST NAJWAŻNIEJSZY NIGDY GO NIE ŚCISKAJ */
+/* ✅ IDEALNY BALANS USTAWIONY NA ZAWSZE */
 .contact-text {
   flex-grow: 1;
+  flex-shrink: 1;
+  min-width: 110px;
   margin-right: 12px;
-  flex-shrink: 0;
 }
 
 .contact-label {
@@ -141,7 +141,7 @@ body {
   overflow-wrap: break-word;
 }
 
-/* JEŚLI MUSISZ COŚ ŚCISNĄĆ ŚCISKAJ TYLKO PRZYCISK */
+/* ✅ PRZYCISK NIGDY NIE ZMIENI ROZMIARU NIGDY POD ŻADNYM POZWODEM */
 .button-ghost {
   background: #f1f5f9;
   color: #4f46e5;
@@ -152,7 +152,7 @@ body {
   font-size: 0.8rem;
   transition: all 0.2s;
   white-space: nowrap;
-  flex-shrink: 10000;
+  flex-shrink: 0;
 }
 
 .contact-item:hover .button-ghost {
