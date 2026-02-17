@@ -19,6 +19,8 @@ body {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
+  max-width: 650px;
+  margin: 0 auto;
 }
 
 .hero {
@@ -115,7 +117,6 @@ body {
   flex-shrink: 0;
 }
 
-/* ✅ OTO POPRAWNY UKŁAD KTÓRY DZIAŁA NA WSZYSTKICH TELEFONACH */
 .contact-text {
   flex-grow: 1;
   flex-shrink: 1;
@@ -139,7 +140,6 @@ body {
   overflow-wrap: break-word;
 }
 
-/* ✅ PRZYCISK NIGDY SIĘ NIE ZMIENIA I NIGDY NIE WYCHODZI POZA EKRAN */
 .button-ghost {
   background: #f1f5f9;
   color: #4f46e5;
@@ -167,9 +167,6 @@ body {
 
 /* 📱 TELEFON */
 @media (max-width: 767px) {
-  .page {
-    max-width: 100%;
-  }
   .sticky-naglowek {
     display: none;
   }
@@ -177,15 +174,6 @@ body {
 
 /* 💻 KOMPUTER */
 @media (min-width: 768px) {
-  .page {
-    max-width: 650px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 10;
-  }
-  .hero-line {
-    margin-top: -40px;
-  }
   .sticky-naglowek {
     display: block;
     position: fixed;
