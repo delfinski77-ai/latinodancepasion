@@ -120,6 +120,8 @@ body {
 
 .contact-text {
   min-width: 0;
+  margin-right: 110px; /* ✅ TO JEST TA JEDNA LINIJKA KTÓRA NAPRAWI WSZYSTKO NA ZAWSZE */
+}
 }
 
 .contact-label {
@@ -202,3 +204,4 @@ body {
     margin-top: 0.75rem;
   }
 }
+
