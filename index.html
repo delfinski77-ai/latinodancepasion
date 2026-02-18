@@ -18,81 +18,86 @@
   <link rel="stylesheet" href="css/style.css">
 
   <style>
-    /* NOWE STYLE DLA RAMEK - BŁĘKIT I CIENIE */
+    /* ---- DELIKATNE BŁĘKITNE RAMKI I CIENIE ---- */
     .contact-item {
-      display: flex;
-      align-items: center;
-      background-color: #ffffff !important;
-      border: 2px solid #e0f2fe !important; /* Jasny błękitny brzeg */
-      border-radius: 18px !important;
-      margin-bottom: 20px !important;
-      padding: 15px !important;
-      text-decoration: none !important;
+      border: 1px solid #b3d4fc !important; 
+      box-shadow: 0 4px 15px rgba(179, 212, 252, 0.4) !important; 
       transition: all 0.3s ease !important;
-      box-shadow: 0 6px 15px rgba(186, 230, 253, 0.5) !important; /* Błękitny cień */
     }
 
-    /* Efekt po dotknięciu/najechaniu */
-    .contact-item:active, .contact-item:hover {
-      border-color: #bae6fd !important;
-      transform: scale(1.01);
-      box-shadow: 0 8px 20px rgba(186, 230, 253, 0.7) !important;
-    }
-
-    /* POPRAWKI DLA SMARTFONÓW */
+    /* WYMUSZONE POPRAWKI DLA SMARTFONÓW */
     @media (max-width: 600px) {
       .contact-item {
+        display: flex !important;
         flex-direction: column !important;
+        align-items: center !important;
         text-align: center !important;
         padding: 25px 15px !important;
         height: auto !important;
+        min-height: 150px !important;
+        position: relative !important;
       }
+
       .contact-text {
         margin: 10px 0 !important;
+        width: 100% !important;
       }
+
       .contact-value {
-        white-space: nowrap !important;
+        white-space: nowrap !important; /* Numer telefonu w jednej linii */
         display: block !important;
         font-size: 1.2rem !important;
         margin: 5px 0 15px 0 !important;
-        color: #333 !important;
       }
+
+      /* Rozwiązanie problemu nachodzących przycisków */
       .button-ghost {
-        position: relative !important;
+        position: relative !important; /* Zabieramy go z pozycji nad tekstem */
+        right: auto !important;
+        top: auto !important;
         display: inline-block !important;
-        width: 100% !important;
+        width: 90% !important;
         padding: 12px !important;
-        border: 1px solid #bae6fd !important;
-        border-radius: 10px !important;
-        background: #f0f9ff !important;
-        color: #0369a1 !important;
-        font-weight: 600 !important;
+        border: 1px solid #ccc !important;
+        border-radius: 8px !important;
+        text-decoration: none !important;
+        background: #f8f9fa !important;
       }
+
+      /* Naprawa adresu (ul. Ogrodowa) */
+      .contact-item--map .contact-value {
+        white-space: normal !important; /* Adres może być w 2 liniach, byle czytelnie */
+        line-height: 1.4 !important;
+      }
+      
       .contact-icon {
         margin-bottom: 10px !important;
-        background: #f0f9ff !important;
-        padding: 8px !important;
-        border-radius: 12px !important;
-      }
-      .contact-item--map .contact-value {
-        white-space: normal !important;
+        position: static !important;
       }
     }
   </style>
 </head>
+
 <body>
   <div class="page">
     <main class="card">
 
+      <!-- Baner ze zdjęciem -->
       <header class="hero" aria-label="LatinoDancePasion – szkoła tańca">
         <figure class="hero__banner">
-          <img src="images/hero-latinodancepasion.jpg" alt="Para tańcząca latynoską salsę" loading="lazy">
+          <img
+            src="images/hero-latinodancepasion.jpg"
+            alt="Para tańcząca latynoską salsę w czerwonej sukience"
+            loading="lazy">
         </figure>
+
+        <!-- Pasek z hasłem pod zdjęciem -->
         <p class="hero-line">
           Uczymy się <span>salsy i bachaty</span> z prawdziwej pasji do latynoskich rytmów i emocji.
         </p>
       </header>
 
+      <!-- Sekcja kontaktowa -->
       <section class="contact" aria-label="Dane kontaktowe">
         <!-- Telefon -->
         <a class="contact-item" href="tel:+48889906765">
@@ -106,7 +111,8 @@
         <!-- Adres -->
         <a class="contact-item contact-item--map" 
            href="https://maps.google.com/?q=ul.+Ogrodowa+5,+Kochcice" 
-           target="_blank" rel="noopener">
+           target="_blank" 
+           rel="noopener">
           <img src="images/icons/location.svg" class="contact-icon" alt="" aria-hidden="true">
           <div class="contact-text">
             <h2 class="contact-label">Adres</h2>
@@ -115,15 +121,18 @@
           <span class="button-ghost">Nawiguj</span>
         </a>
 
-        <!-- Instagram -->
+        <!-- Instagram (Naprawiony link) -->
         <a class="contact-item contact-item--instagram"
            href="https://www.instagram.com/latinodancepasion/"
-           target="_blank" rel="noopener">
+           target="_blank"
+           rel="noopener">
           <img src="images/icons/instagram.svg" class="contact-icon" alt="" aria-hidden="true">
+
           <div class="contact-text">
             <h2 class="contact-label">Instagram</h2>
             <p class="contact-value">@latinodancepasion</p>
           </div>
+
           <span class="button-ghost">Odwiedź Instagram</span>
         </a>
       </section>
