@@ -1,172 +1,85 @@
-<!DOCTYPE html>
-<html lang="pl">
-<head>
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-  <meta http-equiv="Pragma" content="no-cache" />
-  <meta http-equiv="Expires" content="0" />
-  <meta charset="utf-8">
-  <title>LatinoDancePasion – Salsa & Bachata Kochcice</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description"
-        content="LatinoDancePasion – szkoła tańca w Kochcicach. Salsa i bachata z prawdziwej pasji do latynoskich rytmów i emocji. Sprawdź kontakt i dołącz do nas.">
-  <meta name="theme-color" content="#050816">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="css/style.css">
-
   <style>
-    /* ---- BARDZO GRUBE, MOCNE RAMKI (WIDOCZNE Z DALEKA) ---- */
+    /* EKSTREMALNIE WYRAŹNE RAMKI I EFEKT 3D */
     .contact-item {
-      border: 8px solid #3b82f6 !important; /* Bardzo gruba (8px), mocno niebieska ramka */
-      border-radius: 16px !important; /* Ładne zaokrąglenia rogów */
-      box-shadow: 0 8px 24px rgba(59, 130, 246, 0.4) !important; /* Wyraźny cień pod spodem */
-      transition: all 0.2s ease !important; /* Płynność animacji */
-      background-color: #ffffff !important; /* Gwarancja białego tła w środku */
-      overflow: hidden !important; /* Żeby zawartość nie wystawała poza grube rogi */
+      display: flex;
+      align-items: center;
+      background-color: #ffffff !important;
+      
+      /* Super gruba ramka - 8 pikseli */
+      border: 8px solid #0ea5e9 !important; 
+      border-radius: 30px !important;
+      
+      margin-bottom: 35px !important;
+      padding: 25px !important;
+      text-decoration: none !important;
+      transition: all 0.2s ease-in-out !important;
+      
+      /* Bardzo mocny, szeroki błękitny cień widoczny z daleka */
+      box-shadow: 0 15px 35px rgba(14, 165, 233, 0.4) !important;
+      position: relative;
     }
 
-    /* Efekt wciśnięcia (telefon) lub najechania myszką (komputer) */
+    /* Efekt po dotknięciu/najechaniu - karta mocno reaguje */
     .contact-item:active, .contact-item:hover {
-      border: 8px solid #1d4ed8 !important; /* Ciemniejszy, głęboki niebieski po naciśnięciu */
-      box-shadow: 0 4px 12px rgba(29, 78, 216, 0.6) !important; /* Cień się chowa */
-      transform: scale(0.96) !important; /* Ramka fajnie "wciska się" w dół */
+      border-color: #0369a1 !important; /* Ciemnieje przy kliku */
+      transform: scale(1.03) translateY(-5px); /* Powiększa się i unosi */
+      box-shadow: 0 20px 45px rgba(3, 105, 161, 0.6) !important;
     }
 
-    /* WYMUSZONE POPRAWKI DLA SMARTFONÓW */
+    /* Wyraźne nagłówki wewnątrz ramek */
+    .contact-label {
+      color: #0369a1 !important;
+      font-weight: 900 !important;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* POPRAWKI DLA SMARTFONÓW - MAKSYMALNA CZYTELNOŚĆ */
     @media (max-width: 600px) {
       .contact-item {
-        display: flex !important;
         flex-direction: column !important;
-        align-items: center !important;
         text-align: center !important;
-        padding: 25px 15px !important;
-        height: auto !important;
-        min-height: 150px !important;
-        position: relative !important;
+        padding: 40px 20px !important;
+        margin-left: 10px !important;
+        margin-right: 10px !important;
       }
-
       .contact-text {
-        margin: 10px 0 !important;
-        width: 100% !important;
+        margin: 20px 0 !important;
       }
-
       .contact-value {
-        white-space: nowrap !important; /* Numer telefonu w jednej linii */
+        white-space: nowrap !important;
         display: block !important;
-        font-size: 1.2rem !important;
-        margin: 5px 0 15px 0 !important;
+        font-size: 1.8rem !important; /* Bardzo duży tekst */
+        font-weight: 900 !important;
+        margin: 10px 0 25px 0 !important;
+        color: #0ea5e9 !important;
       }
-
-      /* Rozwiązanie problemu nachodzących przycisków */
       .button-ghost {
-        position: relative !important; 
-        right: auto !important;
-        top: auto !important;
-        display: inline-block !important;
-        width: 90% !important;
-        padding: 12px !important;
-        border: 2px solid #ccc !important;
-        border-radius: 8px !important;
-        text-decoration: none !important;
-        background: #f8f9fa !important;
+        position: relative !important;
+        display: block !important;
+        width: 100% !important;
+        padding: 20px !important;
+        border: none !important;
+        border-radius: 15px !important;
+        background: #0ea5e9 !important; /* Mocny błękitny przycisk */
+        color: #ffffff !important;      /* Biały tekst */
+        font-weight: 900 !important;
+        font-size: 1.1rem !important;
+        text-transform: uppercase !important;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2) !important;
       }
-
-      /* Naprawa adresu (ul. Ogrodowa) */
-      .contact-item--map .contact-value {
-        white-space: normal !important; /* Adres może być w 2 liniach, byle czytelnie */
-        line-height: 1.4 !important;
-      }
-      
       .contact-icon {
-        margin-bottom: 10px !important;
-        position: static !important;
+        width: 60px !important;
+        height: 60px !important;
+        margin-bottom: 15px !important;
+        background: #f0f9ff !important;
+        padding: 10px !important;
+        border: 4px solid #0ea5e9 !important;
+        border-radius: 20px !important;
+      }
+      .contact-item--map .contact-value {
+        white-space: normal !important;
+        font-size: 1.5rem !important;
       }
     }
   </style>
-</head>
-
-<body>
-  <div class="page">
-    <main class="card">
-
-      <!-- Baner ze zdjęciem -->
-      <header class="hero" aria-label="LatinoDancePasion – szkoła tańca">
-        <figure class="hero__banner">
-          <img
-            src="images/hero-latinodancepasion.jpg"
-            alt="Para tańcząca latynoską salsę w czerwonej sukience"
-            loading="lazy">
-        </figure>
-
-        <!-- Pasek z hasłem pod zdjęciem -->
-        <p class="hero-line">
-          Uczymy się <span>salsy i bachaty</span> z prawdziwej pasji do latynoskich rytmów i emocji.
-        </p>
-      </header>
-
-      <!-- Sekcja kontaktowa -->
-      <section class="contact" aria-label="Dane kontaktowe">
-        <!-- Telefon -->
-        <a class="contact-item" href="tel:+48889906765">
-          <img src="images/icons/phone.svg" class="contact-icon" alt="" aria-hidden="true">
-          <div class="contact-text">
-            <h2 class="contact-label">Telefon</h2>
-            <p class="contact-value">889 906 765</p>
-          </div>
-        </a>
-
-        <!-- Adres -->
-        <a class="contact-item contact-item--map" 
-           href="https://maps.google.com/?q=ul.+Ogrodowa+5,+Kochcice" 
-           target="_blank" 
-           rel="noopener">
-          <img src="images/icons/location.svg" class="contact-icon" alt="" aria-hidden="true">
-          <div class="contact-text">
-            <h2 class="contact-label">Adres</h2>
-            <p class="contact-value">ul. Ogrodowa 5, Kochcice</p>
-          </div>
-          <span class="button-ghost">Nawiguj</span>
-        </a>
-
-        <!-- Instagram -->
-        <a class="contact-item contact-item--instagram"
-           href="https://www.instagram.com/latinodancepasion/"
-           target="_blank"
-           rel="noopener">
-          <img src="images/icons/instagram.svg" class="contact-icon" alt="" aria-hidden="true">
-
-          <div class="contact-text">
-            <h2 class="contact-label">Instagram</h2>
-            <p class="contact-value">@latinodancepasion</p>
-          </div>
-
-          <span class="button-ghost">Odwiedź Instagram</span>
-        </a>
-      </section>
-
-      <footer class="footer">
-        <p class="footer__text">© 2025 LatinoDancePasion. Wszelkie prawa zastrzeżone.</p>
-      </footer>
-    </main>
-  </div>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "LatinoDancePasion",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "ul. Ogrodowa 5",
-      "addressLocality": "Kochcice",
-      "addressCountry": "PL"
-    },
-    "telephone": "+48 889 906 765",
-    "sameAs": [ "https://www.instagram.com/latinodancepasion/" ]
-  }
-  </script>
-</body>
-</html>
