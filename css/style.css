@@ -214,5 +214,63 @@ body {
     margin-top: 0.75rem;
   }
 }
+To jest Twój plik **HTML**. Sam w sobie jest on poprawny, ale to, jak strona wygląda (kolory, układ, nachodzenie elementów), zapisane jest w pliku **`css/style.css`**, do którego odsyła linijka: `<link rel="stylesheet" href="css/style.css">`.
+
+Aby naprawić błędy na telefonie, które widzieliśmy na zrzucie ekranu, musimy zmodyfikować właśnie plik **`style.css`**.
+
+### Co musisz zrobić:
+1. Wejdź na GitHub do folderu **`css`**.
+2. Otwórz plik **`style.css`**.
+3. Zjedź na sam dół tego pliku i wklej poniższy kod (on naprawi telefon i przyciski):
+
+```css
+/* POPRAWKI DLA TELEFONÓW */
+@media (max-width: 600px) {
+  /* 1. Naprawa kart kontaktu - układamy wszystko pionowo */
+  .contact-item {
+    flex-direction: column !important; /* Wszystko pod sobą */
+    align-items: center !important;
+    text-align: center !important;
+    padding: 20px !important;
+    height: auto !important; /* Pozwalamy karcie urosnąć w pionie */
+  }
+
+  /* 2. Naprawa ikon - żeby nie były przyklejone do boku */
+  .contact-icon {
+    margin: 0 0 10px 0 !important;
+    width: 40px !important;
+    height: 40px !important;
+  }
+
+  /* 3. Naprawa numeru telefonu i adresu - żeby nie pękały na pół */
+  .contact-value {
+    white-space: nowrap !important; /* Zakaz łamania numeru telefonu */
+    font-size: 1.1rem !important;
+    margin-bottom: 10px !important;
+  }
+
+  /* Specjalnie dla adresu, bo jest długi - pozwalamy mu na dwie linie, ale ładnie */
+  .contact-item--map .contact-value {
+    white-space: normal !important;
+  }
+
+  /* 4. Naprawa przycisków "Nawiguj" i "Instagram" - żeby nie nachodziły na tekst */
+  .button-ghost {
+    position: static !important; /* Wyłączamy "latanie" przycisku */
+    display: inline-block !important;
+    margin-top: 10px !important;
+    width: 100% !important; /* Przycisk na całą szerokość karty */
+    text-align: center !important;
+    padding: 10px 0 !important;
+  }
+  
+  /* Usuwamy niepotrzebne tło pod ikoną jeśli było, by było czytelniej */
+  .contact-icon {
+      background: none !important;
+  }
+}
+
+
+
 
 
