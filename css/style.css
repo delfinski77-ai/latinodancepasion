@@ -163,10 +163,20 @@ body {
   font-size: 0.85rem;
 }
 
-/* 📱 TELEFON */
-@media (max-width: 767px) {
-  .sticky-naglowek {
-    display: none;
+/* Styl dla kart kontaktu na telefonie */
+@media (max-width: 600px) {
+  .twoja-klasa-karty { 
+    display: flex;
+    flex-direction: column; /* Układa elementy jeden pod drugim */
+    align-items: center;    /* Środkuje wszystko */
+    text-align: center;
+    padding: 20px;
+  }
+
+  .przycisk-nawiguj {
+    position: static;       /* Wyłącza nachodzenie na tekst */
+    margin-top: 15px;       /* Daje odstęp pod tekstem */
+    width: 100%;            /* Przycisk na całą szerokość karty */
   }
 }
 
@@ -204,4 +214,5 @@ body {
     margin-top: 0.75rem;
   }
 }
+
 
