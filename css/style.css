@@ -270,6 +270,25 @@ Aby naprawić błędy na telefonie, które widzieliśmy na zrzucie ekranu, musim
   }
 }
 
+/* ---- WYGLĄD RAMEK KONTAKTOWYCH (BŁĘKIT I CIEŃ) ---- */
+.contact-item {
+  /* Delikatna błękitna ramka (1 piksel grubości) */
+  border: 1px solid #b3d4fc !important; 
+  
+  /* Miękki, lekko błękitny cień dookoła ramki */
+  box-shadow: 0 4px 20px rgba(179, 212, 252, 0.4) !important; 
+  
+  /* Płynne przejście dla efektu najechania myszką */
+  transition: all 0.3s ease !important;
+}
+
+/* Efekt po najechaniu myszką (tylko dla komputerów) */
+.contact-item:hover {
+  box-shadow: 0 8px 25px rgba(179, 212, 252, 0.7) !important;
+  transform: translateY(-3px) !important; /* Ramka lekko unosi się do góry */
+  border-color: #8abef9 !important; /* Ramka staje się odrobinę ciemniejsza */
+}
+
 
 
 
