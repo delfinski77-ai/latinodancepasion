@@ -1,71 +1,29 @@
-  <style>
-    /* WYRAŹNE BŁĘKITNE RAMKI I MOCNE CIENIE */
-    .contact-item {
-      display: flex;
-      align-items: center;
-      background-color: #ffffff !important;
-      
-      /* Grubsza i ciemniejsza ramka błękitna */
-      border: 4px solid #7dd3fc !important; 
-      border-radius: 20px !important;
-      
-      margin-bottom: 25px !important;
-      padding: 20px !important;
-      text-decoration: none !important;
-      transition: all 0.2s ease-in-out !important;
-      
-      /* Mocniejszy, widoczny błękitny cień */
-      box-shadow: 0 10px 20px rgba(125, 211, 252, 0.4) !important;
-    }
+/* DODANIE KOLORÓW I CIENI DO RAMEK */
+.contact-item {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff; /* Białe tło w środku */
+  border: 2px solid #e0f2fe;  /* Delikatny błękitny brzeg (jasny) */
+  border-radius: 16px;        /* Zaokrąglone rogi */
+  margin-bottom: 16px;        /* Odstęp między ramkami */
+  padding: 15px;
+  text-decoration: none;
+  transition: all 0.3s ease;  /* Płynne przejście przy kliknięciu */
+  
+  /* CIEŃ: delikatna błękitna poświata */
+  box-shadow: 0 4px 15px rgba(186, 230, 253, 0.4); 
+}
 
-    /* Efekt po dotknięciu/najechaniu - ramka staje się jeszcze wyraźniejsza */
-    .contact-item:active, .contact-item:hover {
-      border-color: #38bdf8 !important; /* Ciemniejszy błękit przy kliku */
-      transform: translateY(-4px);      /* Mocniejsze uniesienie */
-      box-shadow: 0 15px 25px rgba(56, 189, 248, 0.5) !important;
-    }
+/* Efekt po naciśnięciu / najechaniu myszką */
+.contact-item:hover {
+  border-color: #bae6fd;      /* Nieco ciemniejszy błękit przy dotknięciu */
+  transform: translateY(-2px); /* Lekkie uniesienie karty */
+  box-shadow: 0 8px 20px rgba(186, 230, 253, 0.6);
+}
 
-    /* Błękitne tło dla ikon */
-    .contact-icon {
-      background-color: #e0f2fe !important;
-      padding: 12px !important;
-      border-radius: 15px !important;
-      border: 2px solid #7dd3fc !important;
-    }
-
-    /* POPRAWKI DLA SMARTFONÓW */
-    @media (max-width: 600px) {
-      .contact-item {
-        flex-direction: column !important;
-        text-align: center !important;
-        padding: 30px 15px !important;
-      }
-      .contact-text {
-        margin: 15px 0 !important;
-      }
-      .contact-value {
-        white-space: nowrap !important;
-        display: block !important;
-        font-size: 1.4rem !important; /* Większy numer telefonu */
-        font-weight: 700 !important;
-        margin: 5px 0 20px 0 !important;
-        color: #0369a1 !important; /* Ciemnoniebieski tekst */
-      }
-      .button-ghost {
-        position: relative !important;
-        display: block !important;
-        width: 100% !important;
-        padding: 15px !important;
-        border: 2px solid #0284c7 !important;
-        border-radius: 12px !important;
-        background: #0284c7 !important; /* Pełny niebieski przycisk */
-        color: #ffffff !important;      /* Biały tekst na przycisku */
-        font-weight: 700 !important;
-        text-transform: uppercase !important;
-        letter-spacing: 1px !important;
-      }
-      .contact-item--map .contact-value {
-        white-space: normal !important;
-      }
-    }
-  </style>
+/* Kolor dla ikon (żeby też były błękitne, jeśli chcesz) */
+.contact-icon {
+  background-color: #f0f9ff;  /* Bardzo jasne błękitne tło pod ikonką */
+  padding: 10px;
+  border-radius: 12px;
+}
