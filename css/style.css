@@ -1,295 +1,71 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  min-width: 0;
-  font-family: 'Inter', system-ui, sans-serif;
-}
+  <style>
+    /* WYRAŹNE BŁĘKITNE RAMKI I MOCNE CIENIE */
+    .contact-item {
+      display: flex;
+      align-items: center;
+      background-color: #ffffff !important;
+      
+      /* Grubsza i ciemniejsza ramka błękitna */
+      border: 4px solid #7dd3fc !important; 
+      border-radius: 20px !important;
+      
+      margin-bottom: 25px !important;
+      padding: 20px !important;
+      text-decoration: none !important;
+      transition: all 0.2s ease-in-out !important;
+      
+      /* Mocniejszy, widoczny błękitny cień */
+      box-shadow: 0 10px 20px rgba(125, 211, 252, 0.4) !important;
+    }
 
-html, body {
-  overflow-x: hidden;
-}
+    /* Efekt po dotknięciu/najechaniu - ramka staje się jeszcze wyraźniejsza */
+    .contact-item:active, .contact-item:hover {
+      border-color: #38bdf8 !important; /* Ciemniejszy błękit przy kliku */
+      transform: translateY(-4px);      /* Mocniejsze uniesienie */
+      box-shadow: 0 15px 25px rgba(56, 189, 248, 0.5) !important;
+    }
 
-body {
-  background: #f1f5f9;
-  padding: 2rem 1rem;
-}
+    /* Błękitne tło dla ikon */
+    .contact-icon {
+      background-color: #e0f2fe !important;
+      padding: 12px !important;
+      border-radius: 15px !important;
+      border: 2px solid #7dd3fc !important;
+    }
 
-.card {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  max-width: 650px;
-  margin: 0 auto;
-}
-
-.hero {
-  width: 100%;
-  border-radius: 24px;
-  overflow: hidden;
-  position: relative;
-}
-
-.hero img {
-  width: 100%;
-  height: auto;
-  display: block;
-  transition: transform 0.6s cubic-bezier(0.33, 1, 0.68, 1);
-}
-
-.hero:hover img {
-  transform: scale(1.02);
-}
-
-.hero::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 50%;
-  background: linear-gradient(to top, rgba(0,0,0,0.5), transparent);
-  z-index: 2;
-  pointer-events: none;
-}
-
-.hero-line {
-  background: rgba(15, 15, 15, 0.7);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  color: white;
-  padding: 1.5rem 1.25rem;
-  border-radius: 20px;
-  text-align: center;
-  margin-left: 0.75rem;
-  margin-right: 0.75rem;
-  margin-top: -20px;
-  max-width: calc(100% - 1.5rem);
-  z-index: 10;
-  position: relative;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
-  font-size: clamp(0.9rem, 4vw, 1rem);
-  line-height: 1.6;
-  font-weight: 400;
-  transition: all 0.3s ease;
-}
-
-.hero-line:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
-}
-
-.hero-line span {
-  font-weight: 700;
-  color: #ff6b9d;
-}
-
-.contact {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
-
-/* ✅ OSTATECZNA NAPRAWA NA ZAWSZE. UŻYWAMY GRIDA */
-.contact-item {
-  background: white;
-  padding: 1.75rem;
-  border-radius: 16px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-  display: grid;
-  grid-template-columns: 48px 1fr auto;
-  align-items: center;
-  gap: 1rem;
-  text-decoration: none;
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.contact-item:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-}
-
-.contact-icon {
-  width: 48px;
-  height: 48px;
-  background: #f1f5f9;
-  padding: 12px;
-  border-radius: 12px;
-}
-
-.contact-text {
-  min-width: 0;
-  margin-right: 110px; /* ✅ TO JEST TA JEDNA LINIJKA KTÓRA NAPRAWI WSZYSTKO NA ZAWSZE */
-}
-}
-
-.contact-label {
-  color: #64748b;
-  font-size: 0.85rem;
-  font-weight: 500;
-  display: block;
-  margin-bottom: 0.25rem;
-}
-
-.contact-value {
-  color: #1e293b;
-  font-size: 1.15rem;
-  font-weight: 700;
-  line-height: 1.3;
-}
-
-.button-ghost {
-  background: #f1f5f9;
-  color: #4f46e5;
-  text-decoration: none;
-  padding: 0.75rem 1rem;
-  border-radius: 12px;
-  font-weight: 600;
-  font-size: 0.8rem;
-  transition: all 0.2s;
-  white-space: nowrap;
-}
-
-.contact-item:hover .button-ghost {
-  background: #4f46e5;
-  color: white;
-}
-
-.footer {
-  text-align: center;
-  padding-top: 2rem;
-  color: #94a3b8;
-  font-size: 0.85rem;
-}
-
-/* Styl dla kart kontaktu na telefonie */
-@media (max-width: 600px) {
-  .twoja-klasa-karty { 
-    display: flex;
-    flex-direction: column; /* Układa elementy jeden pod drugim */
-    align-items: center;    /* Środkuje wszystko */
-    text-align: center;
-    padding: 20px;
-  }
-
-  .przycisk-nawiguj {
-    position: static;       /* Wyłącza nachodzenie na tekst */
-    margin-top: 15px;       /* Daje odstęp pod tekstem */
-    width: 100%;            /* Przycisk na całą szerokość karty */
-  }
-}
-
-/* 💻 KOMPUTER */
-@media (min-width: 768px) {
-  .hero-line {
-    margin-top: -40px;
-  }
-
-  .sticky-naglowek {
-    display: block;
-    position: fixed;
-    top: 50%;
-    right: 4%;
-    transform: translateY(-50%);
-    text-align: right;
-    line-height: 0.85;
-    pointer-events: none;
-    z-index: 1;
-  }
-  .sticky-naglowek .linia1 {
-    font-size: 5rem;
-    font-weight: 900;
-    background: linear-gradient(45deg, #7c1d33, #ff6b9d);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    opacity: 0.9;
-    font-style: italic;
-  }
-  .sticky-naglowek .linia2 {
-    font-size: 2rem;
-    font-weight: 300;
-    color: #475569;
-    margin-top: 0.75rem;
-  }
-}
-To jest Twój plik **HTML**. Sam w sobie jest on poprawny, ale to, jak strona wygląda (kolory, układ, nachodzenie elementów), zapisane jest w pliku **`css/style.css`**, do którego odsyła linijka: `<link rel="stylesheet" href="css/style.css">`.
-
-Aby naprawić błędy na telefonie, które widzieliśmy na zrzucie ekranu, musimy zmodyfikować właśnie plik **`style.css`**.
-
-### Co musisz zrobić:
-1. Wejdź na GitHub do folderu **`css`**.
-2. Otwórz plik **`style.css`**.
-3. Zjedź na sam dół tego pliku i wklej poniższy kod (on naprawi telefon i przyciski):
-
-```css
-/* POPRAWKI DLA TELEFONÓW */
-@media (max-width: 600px) {
-  /* 1. Naprawa kart kontaktu - układamy wszystko pionowo */
-  .contact-item {
-    flex-direction: column !important; /* Wszystko pod sobą */
-    align-items: center !important;
-    text-align: center !important;
-    padding: 20px !important;
-    height: auto !important; /* Pozwalamy karcie urosnąć w pionie */
-  }
-
-  /* 2. Naprawa ikon - żeby nie były przyklejone do boku */
-  .contact-icon {
-    margin: 0 0 10px 0 !important;
-    width: 40px !important;
-    height: 40px !important;
-  }
-
-  /* 3. Naprawa numeru telefonu i adresu - żeby nie pękały na pół */
-  .contact-value {
-    white-space: nowrap !important; /* Zakaz łamania numeru telefonu */
-    font-size: 1.1rem !important;
-    margin-bottom: 10px !important;
-  }
-
-  /* Specjalnie dla adresu, bo jest długi - pozwalamy mu na dwie linie, ale ładnie */
-  .contact-item--map .contact-value {
-    white-space: normal !important;
-  }
-
-  /* 4. Naprawa przycisków "Nawiguj" i "Instagram" - żeby nie nachodziły na tekst */
-  .button-ghost {
-    position: static !important; /* Wyłączamy "latanie" przycisku */
-    display: inline-block !important;
-    margin-top: 10px !important;
-    width: 100% !important; /* Przycisk na całą szerokość karty */
-    text-align: center !important;
-    padding: 10px 0 !important;
-  }
-  
-  /* Usuwamy niepotrzebne tło pod ikoną jeśli było, by było czytelniej */
-  .contact-icon {
-      background: none !important;
-  }
-}
-
-/* ---- WYGLĄD RAMEK KONTAKTOWYCH (BŁĘKIT I CIEŃ) ---- */
-.contact-item {
-  /* Delikatna błękitna ramka (1 piksel grubości) */
-  border: 1px solid #b3d4fc !important; 
-  
-  /* Miękki, lekko błękitny cień dookoła ramki */
-  box-shadow: 0 4px 20px rgba(179, 212, 252, 0.4) !important; 
-  
-  /* Płynne przejście dla efektu najechania myszką */
-  transition: all 0.3s ease !important;
-}
-
-/* Efekt po najechaniu myszką (tylko dla komputerów) */
-.contact-item:hover {
-  box-shadow: 0 8px 25px rgba(179, 212, 252, 0.7) !important;
-  transform: translateY(-3px) !important; /* Ramka lekko unosi się do góry */
-  border-color: #8abef9 !important; /* Ramka staje się odrobinę ciemniejsza */
-}
-
-
-
-
-
+    /* POPRAWKI DLA SMARTFONÓW */
+    @media (max-width: 600px) {
+      .contact-item {
+        flex-direction: column !important;
+        text-align: center !important;
+        padding: 30px 15px !important;
+      }
+      .contact-text {
+        margin: 15px 0 !important;
+      }
+      .contact-value {
+        white-space: nowrap !important;
+        display: block !important;
+        font-size: 1.4rem !important; /* Większy numer telefonu */
+        font-weight: 700 !important;
+        margin: 5px 0 20px 0 !important;
+        color: #0369a1 !important; /* Ciemnoniebieski tekst */
+      }
+      .button-ghost {
+        position: relative !important;
+        display: block !important;
+        width: 100% !important;
+        padding: 15px !important;
+        border: 2px solid #0284c7 !important;
+        border-radius: 12px !important;
+        background: #0284c7 !important; /* Pełny niebieski przycisk */
+        color: #ffffff !important;      /* Biały tekst na przycisku */
+        font-weight: 700 !important;
+        text-transform: uppercase !important;
+        letter-spacing: 1px !important;
+      }
+      .contact-item--map .contact-value {
+        white-space: normal !important;
+      }
+    }
+  </style>
